@@ -1,0 +1,206 @@
+@import "breakpoints";
+
+$color1: #f2f2f2;
+$color2: #85b61c;
+$color3: #d87c1f;
+
+$imgWidth: 580px;
+$imgHeight: 775px;
+
+$imgHeightPhone: 500px;
+$imgWidthPhone: 250px;
+
+.messages {
+  display: flex;
+  justify-content: center;
+
+  .loading {
+    font-size: 23px;
+    color: #ffffff;
+  }
+
+  .error {
+    font-size: 23px;
+    color: #ffffff;
+  }
+}
+
+.movie-detail {
+  .bordered {
+    border: 1px solid $color2;
+  }
+
+  .info-label {
+    font-weight: 350;
+    font-size: 30px;
+    color: $color2;
+  }
+
+  .left-side {
+    min-width: 650px;
+
+    @include media("<700px") {
+      min-width: auto;
+    }
+
+
+
+    .movie-image-container {
+      display: flex;
+
+      margin-top: 10%;
+      margin-bottom: 5%;
+      margin-left: 15%;
+      width: 85%;
+      height: $imgHeight;
+
+
+      @include media('<=tablet') {
+        height: $imgHeightPhone;
+      }
+
+
+
+
+
+      .movie-poster {
+        border-radius: 10px;
+        align-self: center;
+
+        width: $imgWidth;
+        height: $imgHeight;
+
+        @include media('<=tablet') {
+          width: 90%;
+          height: $imgHeightPhone;
+        }
+
+      }
+
+      .back-link {
+        font-size: 250px;
+        text-decoration: none;
+        color: $color1;
+        position: absolute;
+        top: 5%;
+        left: 3%;
+      }
+
+      .movie-type {
+        background-color: $color2;
+        font-size: 40px;
+        position: absolute;
+        top: 5%;
+        left: 12%;
+        color: #ffff;
+        border-radius: 10px;
+        padding: 0 2% 2% 2%;
+      }
+    }
+  }
+
+  .right-side {
+    margin-top: 10%;
+
+    .right-side-top {
+      @include media('<=tablet') {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .right-side-top-top {
+        @include media('<=tablet') {
+          display: flex;
+          flex-direction: column;
+        }
+      }
+
+      .right-side-top-bottom {
+        @include media('<=tablet') {
+          display: flex;
+          flex-direction: column;
+        }
+      }
+
+      .movie-title {
+        color: $color1;
+        font-size: 55px;
+
+        @include media('<=tablet') {
+          font-size: 40px;
+        }
+      }
+
+      .movie-year {
+        color: $color1;
+        font-weight: 350;
+        font-size: 30px;
+      }
+
+      .movie-runtime {
+        color: $color1;
+        font-weight: 350;
+        font-size: 30px;
+      }
+
+      .movie-genre {
+        color: $color1;
+        font-weight: 350;
+        font-size: 30px;
+      }
+
+      .movie-rating {
+        font-weight: 350;
+        font-size: 126px;
+        color: $color2;
+      }
+    }
+
+    .movie-plot {
+      color: $color1;
+      margin-left: 2%;
+      font-weight: 350;
+      font-size: 35px;
+
+      @include media('<=tablet') {
+        font-size: 27px;
+      }
+    }
+
+    .right-side-bottom {
+      .right-side-bottom-left {
+        .movie-language {
+          color: $color1;
+          font-weight: 350;
+          font-size: 30px;
+        }
+
+        .movie-awards {
+          color: $color1;
+          font-weight: 350;
+          font-size: 30px;
+        }
+
+        .movie-actors {
+          color: $color1;
+          font-weight: 350;
+          font-size: 30px;
+        }
+      }
+
+      .right-side-bottom-right {
+        .movie-director {
+          color: $color1;
+          font-weight: 350;
+          font-size: 30px;
+        }
+
+        .movie-writer {
+          color: $color1;
+          font-weight: 350;
+          font-size: 30px;
+        }
+      }
+    }
+  }
+}

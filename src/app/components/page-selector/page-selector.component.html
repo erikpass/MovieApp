@@ -1,0 +1,58 @@
+<div class="page-selector" *ngIf="moviesAmount > 0 && selections">
+  <span class="result-display">Results: {{ moviesAmount }}</span>
+
+  <span
+    class="page-select unselectable"
+    (click)="goToPage(1, urlParams)"
+    *ngIf="currentPage != 1; else elseBlockInvalid"
+    >&laquo;</span
+  >
+  <ng-template #elseBlockInvalid
+    ><span class="page-select-invalid unselectable">&laquo;</span></ng-template
+  >
+
+  <ng-template #elseBlockInvalid2
+    ><span class="page-select-invalid unselectable">&lsaquo;</span></ng-template
+  >
+
+  <ng-template #elseBlockInvalid3
+    ><span class="page-select-invalid unselectable">&rsaquo;</span></ng-template
+  >
+
+  <ng-template #elseBlockInvalid4
+    ><span class="page-select-invalid unselectable">&raquo;</span></ng-template
+  >
+
+  <span
+    class="page-select unselectable"
+    *ngIf="currentPage != 1; else elseBlockInvalid2"
+    (click)="goToPage(getBackNumber(currentPage), urlParams)"
+    >&lsaquo;</span
+  >
+
+  <div *ngFor="let page of selections">
+    <div *ngIf="page === currentPage; else elseBlock">
+      <span class="page-select-current unselectable">{{ page }}</span>
+    </div>
+    <ng-template #elseBlock
+      ><span
+        class="page-select unselectable"
+        (click)="goToPage(page, urlParams)"
+        >{{ page }}</span
+      ></ng-template
+    >
+  </div>
+
+  <span
+    class="page-select unselectable"
+    *ngIf="currentPage != lastPage; else elseBlockInvalid3"
+    (click)="goToPage(getForwardNumber(currentPage, lastPage), urlParams)"
+    >&rsaquo;</span
+  >
+  <span
+    class="page-select unselectable"
+    (click)="goToPage(lastPage, urlParams)"
+    *ngIf="currentPage != lastPage; else elseBlockInvalid4"
+    >&raquo;</span
+  >
+</div>

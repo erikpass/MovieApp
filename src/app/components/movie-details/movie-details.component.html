@@ -1,0 +1,69 @@
+<div class="messages">
+  <div class="error" *ngIf="error">Could not load data from the server.</div>
+  <div class="loading" *ngIf="loading">Loading...</div>
+</div>
+
+<div *ngIf="movie" class="movie-detail container-fluid">
+  <div class="row">
+    <div class="left-side col-md-12 col-lg-6">
+      <div class="movie-image-container">
+        <a [routerLink]="'/' + url" class="back-link">&lsaquo;</a>
+        <span class="movie-type">{{ movie.Type }}</span>
+        <img [src]="movie.Poster" class="movie-poster" />
+      </div>
+    </div>
+
+    <div class="right-side col-md-12 col-lg-6">
+      <div class="right-side-top row">
+        <div class="col-md-9 col-sm-12">
+          <div class="right-side-top-top row">
+            <div class="col-12">
+              <p class="movie-title">{{ movie.Title }}</p>
+            </div>
+          </div>
+          <div class="right-side-top-bottom row">
+            <div class="col-md-3 col-sm-12">
+              <p class="movie-year">{{ movie.Year }}</p>
+            </div>
+            <div class="col-md-3 col-sm-12">
+              <p class="movie-runtime">{{ movie.Runtime }}</p>
+            </div>
+            <div class="col-md-6 col-sm-12">
+              <p class="movie-genre">{{ movie.Genre }}</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-12 align-items-center">
+          <p class="movie-rating">{{ movie.imdbRating }}</p>
+        </div>
+      </div>
+
+      <div class="row">
+        <p class="movie-plot">{{ movie.Plot }}</p>
+      </div>
+
+      <div class="right-side-bottom row">
+        <div class="right-side-bottom-left col">
+          <p class="movie-language">
+            <span class="info-label">Language: </span>{{ movie.Language }}
+          </p>
+          <p class="movie-awards">
+            <span class="info-label">Awards: </span>{{ movie.Awards }}
+          </p>
+          <p class="movie-actors">
+            <span class="info-label">Cast: </span>{{ movie.Actors }}
+          </p>
+        </div>
+
+        <div class="right-side-bottom-right col">
+          <p class="movie-director">
+            <span class="info-label">Director: </span>{{ movie.Director }}
+          </p>
+          <p class="movie-writer">
+            <span class="info-label">Writer: </span>{{ movie.Writer }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,32 @@
+<app-page-selector></app-page-selector>
+<div class="messages">
+  <div class="loading" *ngIf="loading">Loading...</div>
+  <div class="error" *ngIf="error">
+    Could not load the data from the server.
+  </div>
+</div>
+<div class="movie-list">
+  <div class="movie-result-card" *ngFor="let movie of moviesList">
+    <a
+      routerLink="/details/{{ movie.imdbID }}"
+      routerLinkActive="router-link-active"
+      class="movie-link"
+    >
+      <div class="poster-overlay">
+        <img src="{{ movie.Poster }}" *ngIf="movie.Poster !== 'N/A'" />
+        <img src="{{ notFoundPoster }}" *ngIf="movie.Poster === 'N/A'" />
+      </div>
+      <p class="title">{{ movie.Title }}</p>
+      <p class="year">{{ movie.Year }}</p>
+      <div class="type type-movie" *ngIf="movie.Type === 'movie'">
+        {{ movie.Type | titlecase }}
+      </div>
+      <div class="type type-series" *ngIf="movie.Type === 'series'">
+        {{ movie.Type | titlecase }}
+      </div>
+      <div class="type type-game" *ngIf="movie.Type === 'game'">
+        {{ movie.Type | titlecase }}
+      </div>
+    </a>
+  </div>
+</div>

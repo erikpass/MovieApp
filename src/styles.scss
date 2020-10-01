@@ -1,0 +1,30 @@
+/* You can add global styles to this file, and also import other style files */
+
+
+body {
+  position: relative;
+  min-height: 100%;
+  background-color: #202020;
+  font-family: 'Segoe UI';
+  font-style: normal;
+  font-weight: normal;
+  background-image: url('./assets/image26.png');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+
+
+
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+}
+
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';

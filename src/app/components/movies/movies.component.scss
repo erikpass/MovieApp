@@ -1,0 +1,109 @@
+$itemWidth: 250px;
+$itemHeight: 300px;
+
+$textMargin: 5px;
+
+.movie-list {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+  min-width: 0;
+  justify-content: center;
+  margin: 2% 0 2% 0;
+}
+
+.messages {
+  display: flex;
+  justify-content: center;
+
+  .loading {
+    font-size: 23px;
+    margin: $textMargin;
+    color: #ffffff;
+  }
+
+  .error {
+    font-size: 23px;
+    margin: $textMargin;
+    color: #ffffff;
+  }
+}
+
+.movie-result-card {
+  flex: 0 0 18%;
+  display: flex;
+  flex-direction: column-reverse;
+  height: $itemHeight;
+  margin-bottom: 5%;
+  position: relative;
+  min-width: $itemWidth;
+  margin-left: 2%;
+
+  img {
+    position: absolute;
+    width: $itemWidth;
+    height: $itemHeight;
+    z-index: -1;
+    box-shadow: 0px 8px 25px 5px rgba(0, 0, 0, 0.3);
+  }
+
+  .poster-overlay {
+    position: absolute;
+    width: $itemWidth;
+    height: $itemHeight;
+    bottom: 0;
+    background: linear-gradient(to top,
+        rgba(0, 0, 0, 100%) 0%,
+        rgba(0, 0, 0, 0%) 100%);
+  }
+
+  .title {
+    position: relative;
+    max-width: $itemWidth - $textMargin * 2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    z-index: 1;
+    font-size: 23px;
+    margin: $textMargin;
+  }
+
+  .type {
+    position: absolute;
+    z-index: 1;
+    top: -20px;
+    left: -10px;
+    font-size: 20px;
+    font-weight: 350;
+    background-color: #D87C1F;
+    color: #ffffff;
+    padding: 2px 5px 5px 5px;
+    box-shadow: 7px 7px 11px 1px rgba(0, 0, 0, 0.25);
+    border-radius: 3px;
+  }
+
+  .type-movie {
+    background-color: #D87C1F;
+  }
+
+  .type-series {
+    background-color: #4198D8;
+  }
+
+  .type-game {
+    background-color: #85B61C;
+  }
+
+  .year {
+    position: relative;
+    z-index: 1;
+    margin: $textMargin;
+    font-weight: 350;
+    font-size: 20px;
+  }
+
+  .movie-link {
+    text-decoration: none;
+    color: white;
+  }
+}

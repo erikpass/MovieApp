@@ -1,0 +1,142 @@
+@import "breakpoints";
+
+$iconWidth: 59px;
+$iconHeight: 59px;
+
+$fontSize: 23px;
+$fontFamily: "Segoe UI";
+$backgroundColor: rgba($color: #afafaf,
+  $alpha: 0.6,
+);
+$backgroundColorFocus: rgba($color: #afafaf,
+  $alpha: 0.8,
+);
+
+.emptyList {
+  height: 95vh;
+  align-items: center;
+
+}
+
+
+.searchFields {
+  margin-top: 2%;
+
+  .search-group-1 {
+    display: flex;
+    justify-content: flex-end;
+    margin: 0;
+    padding: 0;
+
+    @include media('<=tablet', '>phone') {
+      justify-content: center;
+    }
+
+  }
+
+  .search-group-2 {
+    display: flex;
+    justify-content: flex-start;
+    margin: 0;
+    padding: 0;
+
+    @include media('<=tablet', '>phone') {
+      justify-content: center;
+    }
+  }
+
+  .titleField {
+    width: 45%;
+    background-color: $backgroundColor;
+    height: 59px;
+    padding: 0 10px 0 25px;
+    border-radius: 2.5em;
+    border: none;
+    font-size: $fontSize;
+    font-family: $fontFamily;
+    margin-right: 2%;
+    min-width: 250px;
+
+    @include media('<=tablet', '>phone') {
+      width: 450px;
+    }
+
+
+
+    color: white;
+
+    &::placeholder {
+      color: white;
+    }
+
+    &:focus {
+      outline: none;
+      background-color: $backgroundColorFocus;
+    }
+  }
+
+  .yearField {
+    background-color: $backgroundColor;
+    height: 59px;
+    padding: 0 10px 0 25px;
+    border-radius: 2.5em;
+    border: none;
+    font-size: $fontSize;
+    font-family: $fontFamily;
+    margin-right: 2%;
+    min-width: 150px;
+    color: white;
+
+    @include media('<=tablet', '>phone') {
+      width: 350px;
+    }
+
+    &::placeholder {
+      color: white;
+    }
+
+    &:focus {
+      outline: none;
+      background-color: $backgroundColorFocus;
+    }
+  }
+
+  .typeField {
+    background-color: $backgroundColor;
+    height: 59px;
+    padding: 0 10px 0 25px;
+    border-radius: 2.5em;
+    border: none;
+    font-size: $fontSize;
+    font-family: $fontFamily;
+    margin-right: 2%;
+    width: 145px;
+
+    color: white;
+
+    &::placeholder {
+      color: white;
+    }
+
+    &:focus {
+      outline: none;
+      background-color: $backgroundColorFocus;
+    }
+  }
+
+  .searchButton {
+    background-color: #d89b41;
+    width: $iconWidth;
+    height: $iconHeight;
+    border-radius: 2em;
+    position: relative;
+
+    .searchIcon {
+      position: absolute;
+      width: $iconWidth / 2;
+      height: $iconHeight / 2;
+      left: 20%;
+      bottom: 25%;
+    }
+  }
+}
