@@ -18,12 +18,18 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 
+## Project features
+
+Provides a searchbar for consuming the API at `http://www.omdbapi.com/`, allows for changing the pages and searching by type, release date and title.
+Clicking on a result will take you to an expanded details page for that movie.
+Provides static links to go to any search result or details page.
+
 ## How to build & run
 
 1. Install Node.js
 2. Install the Angular CLI
 3. Clone/Download this repository. Extract all files into an empty folder.
 4. Run 'npm install' through a terminal at the location of the folder with these files in them.
-5. After the modules have finished installing, you can run 'ng serve' to have angular serve the files at 'localhost:4200'
+5. After the modules have finished installing, you can run 'ng serve' to have angular serve the files at 'localhost:4200/'
 6. To build the files, run 'ng build' in the terminal at the location of the folder. The build will generate static files in the '/dist' folder.
 7. To run the static files, you will need to create a new node project and use express to serve the static files from a local back-end setup.
